@@ -1,0 +1,4 @@
+- Notes
+    - Auth module will be imported here (the module should be loaded into Artifactory)
+    - Disable Spring Security because the service is called only if the user is authenticated to the application
+    - Uses CrossOrigin (Why ??)
