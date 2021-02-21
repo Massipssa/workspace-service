@@ -29,6 +29,10 @@ deploy:
   on:
     branch: master
 
+
+before_install:
+  - chmod +x ./mvnw
+
 # keep the maven local repository between different runs
 cache:
   directories:
