@@ -20,9 +20,10 @@ jobs:
       install: true
       script: ./mvnw clean package
     - name: "Build image"
-      script: docker build -t massipssa/devs:workspace .
-    - name: "Push image"
-      script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:workspace
+      script: bash scripts/docker_ci.sh
+      #script: docker build -t massipssa/devs:workspace .
+    #- name: "Push image"
+    #  script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:workspace
 
 #deploy:
 #  provider: script
