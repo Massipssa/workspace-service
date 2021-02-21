@@ -22,7 +22,7 @@ jobs:
     - name: "Build image"
       script: docker build -t devs/workspace .
     - name: "Push image"
-      script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:workspace
+      script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:tagname
 
 #deploy:
 #  provider: script
