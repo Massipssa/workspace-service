@@ -18,11 +18,7 @@ jobs:
     - name: "Clean"
       stage: clean
       install: true
-      script: ./mvnw clean
-    - name: "Package"
-      stage: package
-      install: true
-      script: ./mvnw package
+      script: ./mvnw clean package
 deploy:
   provider: script
   script: bash scripts/docker_ci.sh
