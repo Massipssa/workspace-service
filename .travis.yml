@@ -1,20 +1,33 @@
-dist: bionic
+dist: trusty
+# dist: bionic
 os: linux
 sudo: required
 language: java
 jdk: oraclejdk8
-dist: trusty
+
+services:
+  - docker
 
 # stages names from jobs
 stages:
   - clean
+  - package
 
 jobs:
   include:
-    - name: "Clean job"
+    - name: "Clean"
       stage: clean
       install: true
-      script: ./mvnw clean install
+      script: ./mvnw clean
+    - name: "Package"
+      stage: package
+      script: ./mvnw package
+
+deploy:
+  provider: script
+  script: bash scripts/docker_ci.sh
+  on:
+    branch: master
 
 # keep the maven local repository between different runs
 cache:
