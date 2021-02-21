@@ -1,0 +1,25 @@
+dist: bionic
+os: linux
+sudo: required
+language: java
+jdk: oraclejdk8
+
+# stages names from jobs
+stages:
+  - clean
+
+jobs:
+  include:
+    - name: "Clean job"
+      stage: clean
+      install: true
+      script: ./mvnw clean install
+
+# keep the maven local repository between different runs
+cache:
+  directories:
+    - $HOME/.m2
+
+# enable or disable notifications
+notifications:
+  email: false
