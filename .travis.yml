@@ -19,16 +19,16 @@ jobs:
       stage: clean
       install: true
       script: ./mvnw clean package
-    #- name: "Build image"
-    #  script: docker build -t devs/workspace .
-    #- name: "Push image"
-    #  script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:test-tag
+    - name: "Build image"
+      script: docker build -t massipssa/devs:workspace .
+    - name: "Push image"
+      script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push massipssa/devs:workspace
 
-deploy:
-  provider: script
-  script: bash scripts/docker_ci.sh
-  on:
-    branch: master
+#deploy:
+#  provider: script
+#  script: bash scripts/docker_ci.sh
+#  on:
+#    branch: master
 
 
 before_install:
