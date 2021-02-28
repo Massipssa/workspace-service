@@ -6,7 +6,7 @@ spring:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
-    password:
+    password: toto
 
   h2:
     console:
@@ -19,6 +19,10 @@ spring:
   zipkin:
     base-url: http://localhost:9411
 
+  axon:
+    serializer:
+      general: jackson
+
 server:
   port: 8091
 
@@ -26,13 +30,28 @@ logging:
   level:
     root: DEBUG
 
-datasource:
-  jdbc-url: jdbc:postgresql://localhost:5432/apidb
-  username: airflow
-  password: airflow
-  driver-class-name: org.postgresql.Driver
-  pool-size: 30
+
+management:
+  endpoints:
+    # expose Actuator endpoints via http
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    # show health details
+    health:
+      show-details: always
+
+
+  #datasource:
+#  jdbc-url: jdbc:postgresql://localhost:5432/apidb
+#  username: airflow
+  #password: airflow
+  #driver-class-name: org.postgresql.Driver
+  #pool-size: 30
   #ddl-auto: update
-  generate-ddl: true
-  hibernate:
-    ddl-auto: update
+  #generate-ddl: true
+  #hibernate:
+  #  ddl-auto: update
+

@@ -1,4 +1,4 @@
-package com.anonymizer.workspace.service.ServiceImpl;
+package com.anonymizer.workspace.service.serviceImpl;
 
 import com.anonymizer.workspace.model.Workspace;
 import com.anonymizer.workspace.repository.WorkspaceRepository;
@@ -19,8 +19,8 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 
     @Override
     public Workspace createWorkspace(Workspace workspace) {
-        workspace.setCreationTime(LocalDateTime.now());
-        workspace.setUpdateTime(LocalDateTime.now());
+        //workspace.setCreationTime(LocalDateTime.now());
+        //workspace.setUpdateTime(LocalDateTime.now());
         return workspaceRepository.save(workspace);
     }
 

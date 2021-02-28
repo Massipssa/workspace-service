@@ -14,12 +14,12 @@ public class UserWorkspaceController {
 
     @GetMapping(path = "/user/{workspaceName}")
     public User getWorkspaceOwner(@PathVariable("workspaceName") String workspaceName) {
-        return workspaceUserService.getWorkspaceOwner(workspaceName);
+        return this.workspaceUserService.getWorkspaceOwner(workspaceName);
     }
 
     @PostMapping(path = "/user/{workspaceId}/{userId}")
     public void addUserToWorkspace(@PathVariable("workspaceId") int workspaceId, @PathVariable("userId") int userId) {
-        workspaceUserService.addUserToWorkspace(workspaceId, userId);
+        this.workspaceUserService.addUserToWorkspace(workspaceId, userId);
     }
 
 }
