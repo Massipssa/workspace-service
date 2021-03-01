@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM adoptopenjdk/openjdk11
 ARG JAR_NAME=workspace.jar
 ARG JAR_FILE=target/*.jar
 EXPOSE 8091
