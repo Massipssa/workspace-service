@@ -3,7 +3,7 @@ dist: trusty
 os: linux
 sudo: required
 language: java
-jdk: oraclejdk8
+jdk: openjdk11
 
 services:
   - docker
