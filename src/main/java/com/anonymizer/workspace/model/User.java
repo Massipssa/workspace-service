@@ -1,6 +1,5 @@
 package com.anonymizer.workspace.model;
 
-
 import lombok.Data;
 import lombok.Getter;
 

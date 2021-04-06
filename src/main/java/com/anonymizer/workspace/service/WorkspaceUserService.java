@@ -1,7 +1,6 @@
 package com.anonymizer.workspace.service;
 
 import com.anonymizer.workspace.model.User;
-import com.anonymizer.workspace.model.Workspace;
 
 public interface WorkspaceUserService {
 

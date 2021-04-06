@@ -1,5 +1,4 @@
 dist: trusty
-# dist: bionic
 os: linux
 sudo: required
 language: java

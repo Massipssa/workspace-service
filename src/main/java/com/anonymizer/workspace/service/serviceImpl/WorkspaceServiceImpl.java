@@ -6,7 +6,6 @@ import com.anonymizer.workspace.service.WorkspaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +18,6 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 
     @Override
     public Workspace createWorkspace(Workspace workspace) {
-        //workspace.setCreationTime(LocalDateTime.now());
-        //workspace.setUpdateTime(LocalDateTime.now());
         return workspaceRepository.save(workspace);
     }
 
@@ -52,7 +49,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 
     @Override
     public void deleteWorkspace(String workspaceName) {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override

@@ -27,7 +27,7 @@ public class WorkspaceController {
 
     @PostMapping(path = "/workspace")
     public Workspace addWorkspace(@Valid @NotNull @RequestBody Workspace workspace) {
-        LOG.info(String.format("workspace name: {}", workspace.getWorkspaceName()));
+        LOG.info("workspace name: {}", workspace.getWorkspaceName());
         return workspaceService.createWorkspace(workspace);
     }
 
