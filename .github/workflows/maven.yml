@@ -8,6 +8,7 @@
 
 name: Java CI with Maven
 
+# how the wkf will be triggred
 on:
   push:
     branches: [ "master" ]
@@ -15,10 +16,12 @@ on:
     branches: [ "master" ]
 
 jobs:
+  # job name (it can be customized)
   build:
-
+    # the machine in github that will run the job
     runs-on: ubuntu-latest
-
+    
+    # a command that can run an action or a command
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 1.8
@@ -29,6 +32,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: print secret
+      run: hello ${secret.hello}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
