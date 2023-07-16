@@ -21,7 +21,7 @@ env:
   IMAGE_TAG: "workspace"
 jobs:
   # job name (it can be customized)
-  build:
+  build-jar:
     # the machine in github that will run the job
     runs-on: ubuntu-latest
     
@@ -43,8 +43,9 @@ jobs:
     #- name: Update dependency graph
     #  uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
-  build_docker:
+  build-docker-image:
     runs-on: ubuntu-latest
+    needs: [build-jar]
     steps:
     - uses: actions/checkout@v3
     - name: Build docker image
