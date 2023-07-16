@@ -46,5 +46,6 @@ jobs:
   build_docker:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: Build docker image
       run: docker build -t "${{ env.DOKER_USER }}/${{ env.DOKER_REPO }}:${{ env.IMAGE_TAG }}" .
